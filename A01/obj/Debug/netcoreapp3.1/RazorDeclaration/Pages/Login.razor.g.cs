@@ -82,6 +82,13 @@ using Shared.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\Login.razor"
+using Data;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/login")]
     public partial class Login : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -91,18 +98,29 @@ using Shared.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\Login.razor"
+#line 32 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\Login.razor"
        
+
+
     private AuthModel authModel = new AuthModel();
+    private string message = string.Empty;
 
-    private void TryAuthenticate()
+    //protected override async Task OnInitializedAsync()
+    //{
+
+    //}
+
+    private async Task<bool> TryAuthenticate()
     {
-
+        message = await Auth.Test();
+        return false;
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAuthenticationService Auth { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavMan { get; set; }
     }
 }
 #pragma warning restore 1591

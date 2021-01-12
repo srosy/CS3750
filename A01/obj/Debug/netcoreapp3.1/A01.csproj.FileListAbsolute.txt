@@ -15,8 +15,6 @@ E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\A01.csproj.CoreC
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\A01.MvcApplicationPartsAssemblyInfo.cache
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\A01.RazorComponent.input.cache
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
-E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
-E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\FetchData.razor.g.cs
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
@@ -28,8 +26,6 @@ E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\A01.TagHelpers.i
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\A01.TagHelpers.output.cache
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\A01.RazorCoreGenerate.cache
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
-E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
-E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\Razor\Pages\FetchData.razor.g.cs
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs

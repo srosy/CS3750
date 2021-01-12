@@ -83,7 +83,6 @@ using A01.Shared;
         {
         }
         #pragma warning restore 1998
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavMan { get; set; }
     }
 }
 #pragma warning restore 1591

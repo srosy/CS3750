@@ -1,5 +1,8 @@
 ﻿@page "/login"
 @using Shared.Models;
+@using Data;
+@inject NavigationManager NavMan;
+@inject IAuthenticationService Auth;
 
 <div class="text-center login-title">
     <h3>Login</h3>
@@ -19,13 +22,27 @@
 
         <button type="submit">Submit</button>
     </EditForm>
+
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <div class="jumbotron"> @message </div>
+    }
 </div>
 
 @code {
+
+
     private AuthModel authModel = new AuthModel();
+    private string message = string.Empty;
 
-    private void TryAuthenticate()
+    //protected override async Task OnInitializedAsync()
+    //{
+
+    //}
+
+    private async Task<bool> TryAuthenticate()
     {
-
+        message = await Auth.Test();
+        return false;
     }
 }
