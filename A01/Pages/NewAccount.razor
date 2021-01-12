@@ -1,0 +1,58 @@
+﻿@page "/newaccount"
+@using Shared.Models;
+@using Data;
+@inject NavigationManager NavMan;
+@inject IAuthenticationService Auth;
+    <div class="row text-center">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card a01-card">
+                <div class="card-header a01-title">
+                    <h3>New Account</h3>
+                </div>
+                <div class="card-body">
+                    <EditForm Model="@acctModel" OnValidSubmit="@CreateAccount">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+                        <div>
+                            <label class="a01-form-label text-left" for="fname"><strong>First Name</strong></label>
+                            <InputText id="fname" class="a01-input" type="text" placeholder="First Name" @bind-Value="acctModel.FirstName" />
+                        </div>
+                        <div>
+                            <label class="a01-form-label text-left" for="lname"><strong>Last Name</strong></label>
+                            <InputText id="lname" class="a01-input" type="text" placeholder="Last Name" @bind-Value="acctModel.LastName" />
+                        </div>
+                        <div>
+                            <label class="a01-form-label text-left" for="email"><strong>Email</strong></label>
+                            <InputText id="email" class="a01-input" type="text" placeholder="Email" @bind-Value="acctModel.Email" />
+                        </div>
+                        <button class="btn btn-primary a01-btn" type="submit">Create Account</button>
+                    </EditForm>
+
+                    <a href="/login">Already have an account?</a>
+
+                    @if (!string.IsNullOrEmpty(message))
+                    {
+                        <p class="a01-message">@message</p>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+    @code {
+        private AccountModel acctModel = new AccountModel();
+        private string message = string.Empty;
+
+        //protected override async Task OnInitializedAsync()
+        //{
+
+        //}
+
+        private async Task<bool> CreateAccount()
+        {
+            message = await Auth.Test();
+            return false;
+        }
+    }

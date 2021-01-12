@@ -98,23 +98,22 @@ using Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 32 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\Login.razor"
-       
+#line 41 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\Login.razor"
+           
+        private AuthModel authModel = new AuthModel();
+        private string message = string.Empty;
 
+        //protected override async Task OnInitializedAsync()
+        //{
 
-    private AuthModel authModel = new AuthModel();
-    private string message = string.Empty;
+        //}
 
-    //protected override async Task OnInitializedAsync()
-    //{
-
-    //}
-
-    private async Task<bool> TryAuthenticate()
-    {
-        message = await Auth.Test();
-        return false;
-    }
+        private async Task<bool> TryAuthenticate()
+        {
+            message = await Auth.Test();
+            return false;
+        }
+    
 
 #line default
 #line hidden

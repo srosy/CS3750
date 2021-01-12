@@ -182,6 +182,55 @@ app {
     }
 }
 
-.login-title {
-    margin-bottom: 2vh;
+.a01-card {
+    width: 35vw;
+}
+
+.a01-input {
+    width: 25vw;
+}
+
+.a01-btn {
+    margin: 1vh;
+}
+
+.a01-message {
+    color: red;
+    margin: 1vh;
+}
+
+.main-image {
+    height: 40px;
+    width: auto;
+}
+
+.a01-form-label {
+    width: 6vw;
+}
+
+.arpit-image-container {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+}
+
+.arpit-image {
+    height: 200px;
+    width: auto;
+    border-radius: 50%;
+    background-image: url('https://weber.instructure.com/images/thumbnails/92253850/FYEL1OUgoiZwcaJS1OywaXfpYRaeBNnVG1zm1tG0');
+    background-position: center;
+    background-size: contain;
+}
+
+.arpit-description {
+    margin: 3vh;
+}
+
+.btn-primary {
+    background-color: indigo;
 }

@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace A01.Shared
+namespace A01.Pages
 {
     #line hidden
     using System;
@@ -75,7 +75,22 @@ using A01.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 2 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\NewAccount.razor"
+using Shared.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\NewAccount.razor"
+using Data;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/newaccount")]
+    public partial class NewAccount : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -83,20 +98,28 @@ using A01.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "E:\School\Spring 2021\CS3750\CS3750\A01\Shared\NavMenu.razor"
-       
-    private bool collapseNavMenu = true;
+#line 44 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\NewAccount.razor"
+           
+        private AccountModel acctModel = new AccountModel();
+        private string message = string.Empty;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+        //protected override async Task OnInitializedAsync()
+        //{
 
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+        //}
+
+        private async Task<bool> CreateAccount()
+        {
+            message = await Auth.Test();
+            return false;
+        }
+    
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAuthenticationService Auth { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavMan { get; set; }
     }
 }
 #pragma warning restore 1591

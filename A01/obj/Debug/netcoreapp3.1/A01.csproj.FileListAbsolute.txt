@@ -47,3 +47,5 @@ E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\A01.genruntimeco
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\A01.csproj.CopyComplete
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Login.razor.g.cs
 E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\Razor\Pages\Login.razor.g.cs
+E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\NewAccount.razor.g.cs
+E:\School\Spring 2021\CS3750\CS3750\A01\obj\Debug\netcoreapp3.1\Razor\Pages\NewAccount.razor.g.cs

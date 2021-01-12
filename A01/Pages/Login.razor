@@ -3,46 +3,53 @@
 @using Data;
 @inject NavigationManager NavMan;
 @inject IAuthenticationService Auth;
+    <div class="row text-center">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card a01-card">
+                <div class="card-header a01-title">
+                    <h3>Login</h3>
+                </div>
+                <div class="card-body">
+                    <EditForm Model="@authModel" OnValidSubmit="@TryAuthenticate">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+                        <div>
+                            <label class="a01-form-label text-left" for="a01username"><strong>Username</strong></label>
+                            <InputText id="a01username" class="a01-input" type="text" placeholder="Username" @bind-Value="authModel.UserName" />
+                        </div>
+                        <div>
+                            <label class="a01-form-label text-left" for="a01password"><strong>Password</strong></label>
+                            <InputText id="a01password" class="a01-input" type="password" placeholder="Password" @bind-Value="authModel.Password" />
+                        </div>
 
-<div class="text-center login-title">
-    <h3>Login</h3>
-</div>
-<div class="text-center">
-    <EditForm Model="@authModel" OnValidSubmit="@TryAuthenticate">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
-        <div>
-            <label for="a01username"><strong>Username</strong></label>
-            <InputText id="a01username" @bind-Value="authModel.UserName" />
+                        <button class="btn btn-primary a01-btn" type="submit">Submit</button>
+                    </EditForm>
+
+                    <a href="/newaccount">Don't have an account?</a>
+
+                    @if (!string.IsNullOrEmpty(message))
+                    {
+                        <p class="a01-message">@message</p>
+                    }
+                </div>
+            </div>
         </div>
-        <div>
-            <label for="a01password"><strong>Password</strong></label>
-            <InputText id="a01password" @bind-Value="authModel.Password" />
-        </div>
+        <div class="col-md-3"></div>
+    </div>
 
-        <button type="submit">Submit</button>
-    </EditForm>
+    @code {
+        private AuthModel authModel = new AuthModel();
+        private string message = string.Empty;
 
-    @if (!string.IsNullOrEmpty(message))
-    {
-        <div class="jumbotron"> @message </div>
+        //protected override async Task OnInitializedAsync()
+        //{
+
+        //}
+
+        private async Task<bool> TryAuthenticate()
+        {
+            message = await Auth.Test();
+            return false;
+        }
     }
-</div>
-
-@code {
-
-
-    private AuthModel authModel = new AuthModel();
-    private string message = string.Empty;
-
-    //protected override async Task OnInitializedAsync()
-    //{
-
-    //}
-
-    private async Task<bool> TryAuthenticate()
-    {
-        message = await Auth.Test();
-        return false;
-    }
-}
