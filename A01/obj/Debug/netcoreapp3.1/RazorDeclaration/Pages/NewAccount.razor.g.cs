@@ -103,11 +103,6 @@ using Data;
     private AccountModel acctModel = new AccountModel();
     private string message = string.Empty;
 
-    //protected override async Task OnInitializedAsync()
-    //{
-
-    //}
-
     private async void CreateAccount()
     {
         message = "Error trying to create account. Account may already exist.";
@@ -115,6 +110,7 @@ using Data;
         if (acctCreated)
         {
             message = "Account Created. Proceed to login page.";
+            NavMan.NavigateTo("/");
         }
     }
 

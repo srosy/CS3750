@@ -26,7 +26,7 @@
                     </div>
                     <div>
                         <label class="a01-form-label text-left" for="email"><strong>Email</strong></label>
-                        <InputText id="email" class="a01-input" type="text" placeholder="Email" @bind-Value="acctModel.Email" />
+                        <InputText id="email" class="a01-input" type="text" placeholder="This will be your username" @bind-Value="acctModel.Email" />
                     </div>
                     <div>
                         <label class="a01-form-label text-left" for="email"><strong>Password</strong></label>
@@ -51,11 +51,6 @@
     private AccountModel acctModel = new AccountModel();
     private string message = string.Empty;
 
-    //protected override async Task OnInitializedAsync()
-    //{
-
-    //}
-
     private async void CreateAccount()
     {
         message = "Error trying to create account. Account may already exist.";
@@ -63,6 +58,7 @@
         if (acctCreated)
         {
             message = "Account Created. Proceed to login page.";
+            NavMan.NavigateTo("/");
         }
     }
 }
