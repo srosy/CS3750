@@ -48,10 +48,15 @@
 
         //}
 
-        private async Task<bool> TryAuthenticate()
+        private async void TryAuthenticate()
         {
-            var account = await Auth.Authenticate(Db, authModel);
-
-            return false;
+            message = "Login failed.";
+            var authenticated = await Auth.Authenticate(Db, authModel);
+            if (authenticated)
+            {
+                //create cookie
+                //redirect to some page
+                message = "Good job, you logged in.";
+            }
         }
     }

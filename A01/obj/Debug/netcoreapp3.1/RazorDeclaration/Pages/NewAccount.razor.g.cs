@@ -110,7 +110,7 @@ using Data;
 
         private async Task<bool> CreateAccount()
         {
-            message = await Auth.Test();
+            //message = await Auth.Test();
             return false;
         }
 

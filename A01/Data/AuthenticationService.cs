@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using RestSharp;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace A01.Data
 {
@@ -13,23 +16,33 @@ namespace A01.Data
     }
     public class AuthenticationService : IAuthenticationService
     {
+        public IConfiguration Configuration { get; }
+        public AuthenticationService(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
         public async Task<bool> Authenticate(AzureDbContext db, AuthModel model)
         {
-            //TODO: determine if login is a success
-
-            using (db)
+            //determine if login is a success
+            try
             {
-                try
-                {
-                    var a = db.Accounts.FirstOrDefault();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
+                var acct = db.Accounts.FirstOrDefault(a => a.Email.ToLower().Equals(model.UserName.ToLower()));
+                if (acct == null) return false;
 
-            return 1 == 0;
+                var auth = db.Authentications.FirstOrDefault(a => a.AccountId == acct.AccountId);
+                if (auth == null) return false;
+
+                if (!model.Password.Equals(auth.Password)) return false; // case-sensitive
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
         }
     }
 }
+

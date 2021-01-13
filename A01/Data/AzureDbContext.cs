@@ -10,6 +10,6 @@ namespace A01.Data
         {
         }
         public DbSet<Account> Accounts { get; set; }
-        //public DbSet<Authorization> Authorizations { get; set; }// throwing because primary key must be set
+        public DbSet<Authentication> Authentications { get; set; }
     }
 }
