@@ -98,27 +98,31 @@ using Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 44 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\NewAccount.razor"
-           
-        private AccountModel acctModel = new AccountModel();
-        private string message = string.Empty;
+#line 50 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\NewAccount.razor"
+       
+    private AccountModel acctModel = new AccountModel();
+    private string message = string.Empty;
 
-        //protected override async Task OnInitializedAsync()
-        //{
+    //protected override async Task OnInitializedAsync()
+    //{
 
-        //}
+    //}
 
-        private async Task<bool> CreateAccount()
+    private async void CreateAccount()
+    {
+        message = "Error trying to create account. Account may already exist.";
+        var acctCreated = await DbService.CreateAccount(AzureDb, acctModel);
+        if (acctCreated)
         {
-            message = await Auth.Test();
-            return false;
+            message = "Account Created. Proceed to login page.";
         }
-    
+    }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAuthenticationService Auth { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AzureDbContext AzureDb { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IDbService DbService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavMan { get; set; }
     }
 }

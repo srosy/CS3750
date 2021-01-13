@@ -22,7 +22,7 @@ namespace A01
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddDbContext<AzureDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AzureDbContext")));
-            services.AddSingleton<IAuthenticationService, AuthenticationService>();
+            services.AddSingleton<IDbService, DbService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

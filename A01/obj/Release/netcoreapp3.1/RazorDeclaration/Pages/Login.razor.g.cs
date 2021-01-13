@@ -98,7 +98,7 @@ using Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 41 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\Login.razor"
+#line 43 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\Login.razor"
            
         private AuthModel authModel = new AuthModel();
         private string message = string.Empty;
@@ -108,17 +108,24 @@ using Data;
 
         //}
 
-        private async Task<bool> TryAuthenticate()
+        private async void TryAuthenticate()
         {
-            message = await Auth.Test();
-            return false;
+            message = "Login failed.";
+            var authenticated = await DbService.Authenticate(AzureDb, authModel);
+            if (authenticated)
+            {
+                //create cookie?
+                //redirect to some page?
+                message = "Good job, you logged in.";
+            }
         }
     
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAuthenticationService Auth { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AzureDbContext AzureDb { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IDbService DbService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavMan { get; set; }
     }
 }

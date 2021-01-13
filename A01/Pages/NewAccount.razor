@@ -2,7 +2,8 @@
 @using Shared.Models;
 @using Data;
 @inject NavigationManager NavMan;
-@inject IAuthenticationService Auth;
+@inject IDbService DbService;
+@inject AzureDbContext AzureDb;
 
 <div class="row text-center">
     <div class="col-md-3"></div>
@@ -27,15 +28,19 @@
                         <label class="a01-form-label text-left" for="email"><strong>Email</strong></label>
                         <InputText id="email" class="a01-input" type="text" placeholder="Email" @bind-Value="acctModel.Email" />
                     </div>
+                    <div>
+                        <label class="a01-form-label text-left" for="email"><strong>Password</strong></label>
+                        <InputText id="email" class="a01-input" type="text" placeholder="Password" @bind-Value="acctModel.Auth.Password" />
+                    </div>
                     <button class="btn btn-primary a01-btn" type="submit">Create Account</button>
                 </EditForm>
 
                 <a href="/login">Already have an account?</a>
 
                 @if (!string.IsNullOrEmpty(message))
-                    {
-                <p class="a01-message">@message</p>
-                    }
+                {
+                    <p class="a01-message">@message</p>
+                }
             </div>
         </div>
     </div>
@@ -43,17 +48,21 @@
 </div>
 
 @code {
-        private AccountModel acctModel = new AccountModel();
-        private string message = string.Empty;
+    private AccountModel acctModel = new AccountModel();
+    private string message = string.Empty;
 
-        //protected override async Task OnInitializedAsync()
-        //{
+    //protected override async Task OnInitializedAsync()
+    //{
 
-        //}
+    //}
 
-        private async Task<bool> CreateAccount()
+    private async void CreateAccount()
+    {
+        message = "Error trying to create account. Account may already exist.";
+        var acctCreated = await DbService.CreateAccount(AzureDb, acctModel);
+        if (acctCreated)
         {
-            //message = await Auth.Test();
-            return false;
+            message = "Account Created. Proceed to login page.";
         }
+    }
 }

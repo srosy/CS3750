@@ -2,8 +2,9 @@
 @using Shared.Models;
 @using Data;
 @inject NavigationManager NavMan;
-@inject IAuthenticationService Auth;
-@inject AzureDbContext Db;
+@inject IDbService DbService;
+@inject AzureDbContext AzureDb;
+
     <div class="row text-center">
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -51,11 +52,11 @@
         private async void TryAuthenticate()
         {
             message = "Login failed.";
-            var authenticated = await Auth.Authenticate(Db, authModel);
+            var authenticated = await DbService.Authenticate(AzureDb, authModel);
             if (authenticated)
             {
-                //create cookie
-                //redirect to some page
+                //create cookie?
+                //redirect to some page?
                 message = "Good job, you logged in.";
             }
         }
