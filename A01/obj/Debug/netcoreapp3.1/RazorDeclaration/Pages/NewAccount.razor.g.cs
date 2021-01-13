@@ -98,8 +98,8 @@ using Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 44 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\NewAccount.razor"
-           
+#line 45 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\NewAccount.razor"
+       
         private AccountModel acctModel = new AccountModel();
         private string message = string.Empty;
 
@@ -113,7 +113,6 @@ using Data;
             message = await Auth.Test();
             return false;
         }
-    
 
 #line default
 #line hidden

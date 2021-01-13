@@ -98,7 +98,7 @@ using Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 41 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\Login.razor"
+#line 42 "E:\School\Spring 2021\CS3750\CS3750\A01\Pages\Login.razor"
            
         private AuthModel authModel = new AuthModel();
         private string message = string.Empty;
@@ -110,7 +110,10 @@ using Data;
 
         private async Task<bool> TryAuthenticate()
         {
-            message = await Auth.Test();
+            //message = await Auth.Test();
+
+            var account = await Auth.Authenticate(Db, authModel);
+
             return false;
         }
     
@@ -118,6 +121,7 @@ using Data;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AzureDbContext Db { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAuthenticationService Auth { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavMan { get; set; }
     }

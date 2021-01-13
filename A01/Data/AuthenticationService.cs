@@ -3,30 +3,33 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RestSharp;
 
 namespace A01.Data
 {
     public interface IAuthenticationService
     {
-        public Task<bool> Authenticate(AuthModel model);
-        public Task<string> Test();
+        public Task<bool> Authenticate(AzureDbContext db, AuthModel model);
     }
     public class AuthenticationService : IAuthenticationService
     {
-        public Task<bool> Authenticate(AuthModel model)
+        public async Task<bool> Authenticate(AzureDbContext db, AuthModel model)
         {
-            var authenticated = false;
             //TODO: determine if login is a success
 
-            return Task.Run(() => 1 == 0);
-        }
+            using (db)
+            {
+                try
+                {
+                    var a = db.Accounts.FirstOrDefault();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
 
-        public Task<string> Test()
-        {
-            var authenticated = false;
-            //TODO: determine if login is a success
-
-            return Task.Run(() => "Hello from service.");
+            return 1 == 0;
         }
     }
 }

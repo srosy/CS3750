@@ -3,6 +3,7 @@
 @using Data;
 @inject NavigationManager NavMan;
 @inject IAuthenticationService Auth;
+@inject AzureDbContext Db;
     <div class="row text-center">
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -49,7 +50,8 @@
 
         private async Task<bool> TryAuthenticate()
         {
-            message = await Auth.Test();
+            var account = await Auth.Authenticate(Db, authModel);
+
             return false;
         }
     }

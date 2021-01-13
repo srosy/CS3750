@@ -41,10 +41,10 @@ app {
             margin-left: 1.5rem;
         }
 
-.main .top-row a:first-child {
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+        .main .top-row a:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
 .sidebar {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
@@ -129,12 +129,12 @@ app {
     z-index: 1000;
 }
 
-#blazor-error-ui .dismiss {
-    cursor: pointer;
-    position: absolute;
-    right: 0.75rem;
-    top: 0.5rem;
-}
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
 
 @media (max-width: 767.98px) {
     .main .top-row:not(.auth) {
@@ -180,4 +180,57 @@ app {
         /* Never collapse the sidebar for wide screens */
         display: block;
     }
+}
+
+.a01-card {
+    width: 35vw;
+}
+
+.a01-input {
+    width: 25vw;
+}
+
+.a01-btn {
+    margin: 1vh;
+}
+
+.a01-message {
+    color: red;
+    margin: 1vh;
+}
+
+.main-image {
+    height: 40px;
+    width: auto;
+}
+
+.a01-form-label {
+    width: 6vw;
+}
+
+.arpit-image-container {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+}
+
+.arpit-image {
+    height: 200px;
+    width: auto;
+    border-radius: 50%;
+    background-image: url('https://weber.instructure.com/images/thumbnails/92253850/FYEL1OUgoiZwcaJS1OywaXfpYRaeBNnVG1zm1tG0');
+    background-position: center;
+    background-size: contain;
+}
+
+.arpit-description {
+    margin: 3vh;
+}
+
+.btn-primary {
+    background-color: indigo;
 }
