@@ -1,0 +1,10 @@
+E:\School\Spring 2021\CS3750\CS3750\A03\bin\Debug\A03.exe.config
+E:\School\Spring 2021\CS3750\CS3750\A03\bin\Debug\A03.exe
+E:\School\Spring 2021\CS3750\CS3750\A03\bin\Debug\A03.pdb
+E:\School\Spring 2021\CS3750\CS3750\A03\bin\Debug\Newtonsoft.Json.dll
+E:\School\Spring 2021\CS3750\CS3750\A03\bin\Debug\Newtonsoft.Json.xml
+E:\School\Spring 2021\CS3750\CS3750\A03\obj\Debug\A03.csprojAssemblyReference.cache
+E:\School\Spring 2021\CS3750\CS3750\A03\obj\Debug\A03.csproj.CoreCompileInputs.cache
+E:\School\Spring 2021\CS3750\CS3750\A03\obj\Debug\A03.csproj.CopyComplete
+E:\School\Spring 2021\CS3750\CS3750\A03\obj\Debug\A03.exe
+E:\School\Spring 2021\CS3750\CS3750\A03\obj\Debug\A03.pdb
